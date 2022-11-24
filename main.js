@@ -1,12 +1,24 @@
 //get user input
-const userLocation = prompt("enter your location");
+let city = () => {
+  return document.getElementById("city").value;
+};
+
+//getting the button
+const btn = document.querySelector(".btn");
+
+btn.addEventListener("click", handleClick);
+
+// handliing click event on button
+function handleClick(e) {
+  e.preventDefault();
+  getWeatherData();
+}
 
 //getting the weather data
-
 async function getWeatherData() {
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
-    userLocation +
+    city() +
     "&units=metric&appid=7ad09c03e347e967e0ff9126b62b8d0f";
 
   try {
@@ -19,5 +31,3 @@ async function getWeatherData() {
     console.log(err);
   }
 }
-
-getWeatherData();
