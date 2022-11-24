@@ -1,3 +1,6 @@
+const tempPara = document.querySelector(".actual-temp");
+const feelsLike = document.querySelector(".feels-like");
+
 //get user input
 let city = () => {
   return document.getElementById("city").value;
@@ -24,10 +27,17 @@ async function getWeatherData() {
   try {
     let response = await fetch(url, { mode: "cors" });
     let data = await response.json();
-    console.log("temperature", data.main.temp);
-    console.log("feels like", data.main.feels_like);
+    tempPara.textContent =
+      "Current temp is:" + " " + data.main.temp + " degrees";
+    feelsLike.textContent =
+      "Feels like:" + " " + data.main.feels_like + " degrees";
     console.log("response status:", response.status);
   } catch (err) {
     console.log(err);
   }
 }
+
+// need to first get hold of the results div
+
+// create paragraphs
+// add the response results onto the paragraphs
