@@ -4,27 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Weather App</title>
   </head>
-  <body>
-    <div>
-      <form class="my-form">
-        <input
-          type="text"
-          placeholder="Enter your city"
-          value=""
-          id="city"
-          name="city"
-        />
-        <button type="button" class="btn">Search</button>
-      </form>
+  <body
+    class="h-screen bg-cover"
+    style="background-image: url(/wallpaper.jpeg)"
+  >
+    <div class="flex items-center justify-content">
+      <div class="m-auto w-24 h-24">
+        <form class="my-form">
+          <input
+            type="text"
+            placeholder="Enter your city"
+            value=""
+            id="city"
+            name="city"
+          />
+          <button type="button" class="btn">Search</button>
+        </form>
+      </div>
+
+      <div class="results">
+        <p class="actual-temp"></p>
+
+        <p class="feels-like"></p>
+      </div>
     </div>
 
-    <div class="results">
-      <p class="actual-temp"></p>
-
-      <p class="feels-like"></p>
-    </div>
     <script src="/main.js"></script>
   </body>
 </html>
